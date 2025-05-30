@@ -1,0 +1,15 @@
+{
+  "name": "projectitlandscape",
+  "version": "1.0.0",
+  "description": "Een voorbeeldproject voor CI/CD met Docker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Geen tests gedefinieerd\" && exit 0"
+  },
+  "author": "Lander Cuypers",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
