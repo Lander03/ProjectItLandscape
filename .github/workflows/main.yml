@@ -1,25 +1,35 @@
-name: CI/CD Pipeline
+name: Build and Publish Docker Image
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main  # Start workflow bij push naar main
+  workflow_dispatch:  # Handmatig starten
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Log in to Docker Hub
+      - name: Check if GHCR_PAT secret is available
+        run: |
+          if [ -z "${{ secrets.GHCR_PAT }}" ]; then
+            echo "❌ ERROR: GHCR_PAT secret is missing!"
+            exit 1
+          fi
+
+      - name: Log in to GitHub Container Registry with PAT
         uses: docker/login-action@v2
         with:
-          username: Lander39
-          password: Fi*-*9afNzBi-Rs
+          registry: ghcr.io
+          username: Lander03
+          password: ${{ secrets.GHCR_PAT }}
 
       - name: Build Docker image
-        run: docker build -t my-node-app:latest .
+        run: docker build -t ghcr.io/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME:latest .
 
       - name: Push Docker image
-        run: docker push my-node-app:latest
+        run: docker push ghcr.io/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME:latest
