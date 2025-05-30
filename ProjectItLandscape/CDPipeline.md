@@ -2,7 +2,7 @@
 <p align="center">
   <img src="fotos/PipelineCiCd/CDPipeline.jpg" width="700" style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"/>
 </p>
-## 1.1 Overview
+## 1.1 Overvie
 
 In this world of software development, a CI/CD pipeline is essential for automating the process of integrating code changes, running tests, and deploying applications. This document outlines the key components, and all the steps to set a CI/CD pipeline up in Github.
 
