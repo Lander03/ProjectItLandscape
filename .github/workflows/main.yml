@@ -3,8 +3,8 @@ name: Build and Publish Docker Image
 on:
   push:
     branches:
-      - main  # Wordt uitgevoerd bij push naar de main branch
-  workflow_dispatch:  # Je kunt het ook handmatig starten
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -14,10 +14,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Check if GHCR_PAT secret is available
+      - name: Check if GHCR_TOKEN secret is available
         run: |
-          if [ -z "${{ secrets.GHCR_PAT }}" ]; then
-            echo "❌ ERROR: GHCR_PAT secret is missing!"
+          if [ -z "${{ secrets.GHCR_TOKEN }}" ]; then
+            echo "❌ ERROR: GHCR_TOKEN secret is missing!"
             exit 1
           fi
 
@@ -26,7 +26,7 @@ jobs:
         with:
           registry: ghcr.io
           username: Lander03
-          password: ${{ secrets.GHCR_PAT }}
+          password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Build Docker image
         run: docker build -t ghcr.io/lander03/projectitlandscape:latest .
