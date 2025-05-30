@@ -140,13 +140,12 @@ For this method, you also need to download the Docker Desktop installer first.
 
 # 3 Docker Commands
 
-Docker commands can be divided into 5 categories:
+Docker commands can be divided into 4 categories:
 
-1. Installation
-2. Images
-3. Docker Hub
-4. General Commands
-5. Containers
+1. Images
+2. Docker Hub
+3. General Commands
+4. Containers
 
 I will go over these 4 commands for you. I say 4 because we have already covered the installation above. If you're unsure how to do it, feel free to review it again.
 

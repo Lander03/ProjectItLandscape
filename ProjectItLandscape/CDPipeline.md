@@ -47,66 +47,63 @@ That is verry simple, docker is a powerful tool for containers that you can use 
 
 # 2 Setting Up a CI/CD Pipeline in GitHub
 
-For this example, I chose to use a basic application. I chose one based on the Docker tutorial that I made. you can find the link to it under this line, or you can find it in the navigation bar on the right side of this page.:
+Now we are going to set up a CI/CD pipeline in GitHub. To set it up, we are going to need a few things:
 
-[Docker Tutorial](Docker#2-how-to-install-docker)
+- A GitHub repository to host the code
+- The latest version of Docker desktop
+- An IDE or a text editor to edit the files
 
-If you want to, you can always create your own. You can do that by altering the Dockerfile and the docker-compose.yml file. You can also add your own code to the application. If you want to do that, you can find the files in the repository of this project.
+If you have all of those 3 things, then we can proceed.
 
-## 2.1 Creating a GitHub Repository
+## 2.1 Getting And builing the App
+We do not have the source code for the application, so we need to clone the git to get the source code on your own machine. You can do this by running the following command in your terminal:
 
-We have a few steps we need to take in orde to set up a CI/CD pipeline in GitHub.
-
-1. **Create a new repository** on GitHub. First we need to make a new repository on GitHub. You can do that by going to the GitHub website and clicking on the "New" button in the top right corner of the page. Give your repository a name, description, and choose whether you want it to be public or private.
-   You can also fork another repository if you want to use an existing one. For this example, I will use the repository that I am using for my documentation. You can find it here: [ProjectItLandscape](https://github.com/Lander03/ProjectItLandscape/tree/master)
-
-2. **Adding Actions** to the Repository. After you have created your repository, you need to add the actions to it. You will need to press the Actions on the topp navigation.
-
-<p align="center">
-  <img src="fotos/PipelineCiCd/PipelineActionsSet.png" width="700" style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"/>
-</p>
-
-We will make our own yml file, so we are going to set up a workflow ourself.
-You can do that by pressing the **set up a workflow yourself** button. This will create a new file in the `.github/workflows` directory of your repository.
-
-<p align="center">
-  <img src="fotos/PipelineCiCd/PipelineActionSetUp.png" width="700" style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"/>
-</p>
-
-After you pressed the **set up a workflow yourself** button, you will be redirected to a new page where you can edit and name the yml file. You can name the file whatever you want. I am going to name it **CiCdPipelineLandscape**.
-
-3. **Editing the YML file**. Now that you have created the yml file, you can start editing it. You are already in the edit mode, so you can start making the yml file.
-   I made a yml that builds a Docker image and pushes it to the Docker Hub. It does that every time I/someone push to the master branch.
-   My yml file, if you want to copy it:
-
-```yaml
-name: CI/CD Pipeline
-
-on:
-  push:
-    branches: [master]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Build Docker image
-        run: docker build -t my-node-app:latest .
-
-      - name: Push Docker image
-        run: docker push my-node-app:latest
+```bash
+git clone https://github.com/docker/getting-started-app.git
 ```
 
-You need to replace the `{ secrets.DOCKER_USERNAME }` and `{ secrets.DOCKER_PASSWORD }` with your own Docker Hub username and password.
+<p align="center">
+  <img src="fotos/PipelineCiCd/ClondeCiCd.png" width="700" style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"/>
+</p>
 
-If you made a yml file and pasted/ put another code in there and maked the right credentials, then you can press on the **Commint Changes** button in the top right corner of the page. This will save your changes and commit them to the repository.
+Now that we have the source code, we will need to build the image. We can do that by going tinot the **getting-started-app** folder, and we need to create a file namd Dockerfile. In this file, we will write the following code:
+
+```dockerfile
+# syntax=docker/dockerfile:1
+
+FROM node:lts-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+EXPOSE 3000
+```
+
+After that, we will need to build the image. We can do that by running the following command in the terminal:
+
+First we need to navigate to the folder where the Dockerfile is located:
+
+```bash
+cd getting-started-app
+```
+
+<p align="center">
+  <img src="fotos/PipelineCiCd/Navigate.png" width="700" style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"/>
+</p>
+
+Then we can build the image by running the following command:
+
+```bash
+docker build -t getting-started .
+```
+
+<p align="center">
+  <img src="fotos/PipelineCiCd/BuildCiCd.png" width="700" style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"/>
+</p>
+
+## 2.1 Running the Container
+Now that we have the image, we can run the container. We can do that by running the following command in the terminal:
+
+```bash
+docker run -d -p 127.0.0.1:3000:3000 getting-started
+```
