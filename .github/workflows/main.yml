@@ -3,8 +3,8 @@ name: Build and Publish Docker Image
 on:
   push:
     branches:
-      - main  # Start workflow bij push naar main
-  workflow_dispatch:  # Handmatig starten
+      - main  # Wordt uitgevoerd bij push naar de main branch
+  workflow_dispatch:  # Je kunt het ook handmatig starten
 
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
           password: ${{ secrets.GHCR_PAT }}
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME:latest .
+        run: docker build -t ghcr.io/lander03/projectitlandscape:latest .
 
       - name: Push Docker image
-        run: docker push ghcr.io/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME:latest
+        run: docker push ghcr.io/lander03/projectitlandscape:latest
