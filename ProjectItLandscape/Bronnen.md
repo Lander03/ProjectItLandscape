@@ -1,56 +1,72 @@
-# 📚 Bronnen
+# 📚 Sources
 
-## 🌟 Introductie
+<p align="center">
+  <img src="fotos/Bronnen/Bronnen.jpg" width="500" style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"/>
+</p>
 
-Deze pagina bevat een verzameling van alle bronnen voor verschillende de onderwerpen.
+## Introduction
 
----
-
-## 🐳 Docker Bronnen
-
-### 📖 Officiële Documentatie
-
-| 🔗 **Link**                                             | 📝 **Beschrijving**                           |
-| :------------------------------------------------------ | :-------------------------------------------- |
-| [Docker Documentatie](https://docs.docker.com/)         | Uitgebreide officiële documentatie van Docker |
-| [Docker Hub](https://hub.docker.com/)                   | Opslagplaats voor Docker images               |
-| [Docker Compose Docs](https://docs.docker.com/compose/) | Documentatie voor multi-container applicaties |
-
-### 👨‍💻 Tutorials
-
-| 🔗 **Link**                                                 | 📝 **Beschrijving**                          |
-| :---------------------------------------------------------- | :------------------------------------------- |
-| [Docker 101 Tutorial](https://www.docker.com/101-tutorial/) | Beginnersvriendelijke introductie tot Docker |
-| [Play with Docker](https://labs.play-with-docker.com/)      | Interactieve playground om Docker te leren   |
-| [Docker for Beginners](https://docker-curriculum.com/)      | Stap-voor-stap Docker training               |
-
-### 📚 Boeken
-
-| 🔗 **Link**                                                                             | 📝 **Beschrijving**            |
-| :-------------------------------------------------------------------------------------- | :----------------------------- |
-| [Docker Deep Dive](https://www.amazon.com/Docker-Deep-Dive-Nigel-Poulton/dp/1521822808) | Uitgebreide gids voor Docker   |
-| [Docker in Practice](https://www.manning.com/books/docker-in-practice-second-edition)   | Praktische Docker toepassingen |
+This page contains all the links and external websites that I used in this project.
 
 ---
 
-## 🌐 WordPress Bronnen
+## Docker Links
 
-### 📖 Officiële Documentatie
+| **Link**                                                                             | **Description**                           |
+| :----------------------------------------------------------------------------------- | :---------------------------------------- |
+| [Docker Documentation](https://docs.docker.com/)                                    | The official Docker documentation |
+| [Docker Hub](https://hub.docker.com/)                                               | The repostiory for Docker images             |
+| [Docker Compose Docs](https://docs.docker.com/compose/)                             | Documentation for multi-container applications |
+| [Docker 101 Tutorial](https://docs.docker.com/desktop/)                         | The Docker desktop download page|
+| [Docker Desktop](https://labs.play-with-docker.com/)                              | Interactive playground to learn Docker   |
+| [Docker Task Toledo](https://ultra.edu.kuleuven.cloud/ultra/courses/_82194_1/outline/edit/document/_4770026_1?courseId=_82194_1&view=content&state=view)   | The task for docker from Toledo|
+---
 
-| 🔗 **Link**                                                         | 📝 **Beschrijving**                             |
-| :------------------------------------------------------------------ | :---------------------------------------------- |
-| [WordPress Codex](https://codex.wordpress.org/)                     | De officiële WordPress documentatie             |
-| [WordPress Developer Resources](https://developer.wordpress.org/)   | Bronnen specifiek voor WordPress ontwikkelaars  |
-| [Theme Developer Handbook](https://developer.wordpress.org/themes/) | Gids voor het ontwikkelen van WordPress thema's |
+## WordPress Links
 
-
-### 🛠️ Tools
-
-| 🔗 **Link**                                                  | 📝 **Beschrijving**                        |
-| :----------------------------------------------------------- | :----------------------------------------- |
-| [WordPress Plugin Directory](https://wordpress.org/plugins/) | Officiële plugin directory                 |
-| [WordPress Theme Directory](https://wordpress.org/themes/)   | Officiële thema directory                  |
-| [GenerateWP](https://generatewp.com/)                        | Tool voor het genereren van WordPress code |
+| **Link**                                                         | **Description**                             |
+| :--------------------------------------------------------------- | :------------------------------------------ |
+| [WordPress how To](https://elementor.com/blog/how-to-build-a-wordpress-website/?utm_source=google&utm_medium=cpc&utm_campaign=22216640294&utm_term=&lang=&gad_source=1&gad_campaignid=22216640294&gclid=Cj0KCQjw0erBBhDTARIsAKO8iqSpa3nH1IBrOC-rsNaXmwYm9AXOAhlIyz23ZfykhAygNE7qsL9wNxIaAtNtEALw_wcB) | Website for making and learning Wordpress        |
+| [WordPress Plugin Directory](https://wordpress.org/plugins/)     | Official plugin directory                 |
+| [Wordpress Task Toledo](https://ultra.edu.kuleuven.cloud/ultra/courses/_82194_1/outline/edit/document/_4770031_1?courseId=_82194_1&view=content&state=view)                                               | The task for Wordpress from Toledo|
 
 ---
-https://geshan.com.np/blog/2023/03/mongodb-docker-compose/#run-mongodb-with-docker
+
+## MongoDB Links
+
+| **Link**                                                         | **Description**                         |
+| :--------------------------------------------------------------- | :-------------------------------------- |
+| [MongoB How To](https://geshan.com.np/blog/2023/03/mongodb-docker-compose/)     | Site with step by step on how to do it                 |
+| [MongoDB Task Toledo](https://ultra.edu.kuleuven.cloud/ultra/courses/_82194_1/outline/edit/document/_8022658_1?courseId=_82194_1&view=content&state=view)                                               | The task for MongoDB from Toledo|
+---
+
+## CI/CD Pipeline Links
+
+| **Link**                                                         | **Description**                         |
+| :--------------------------------------------------------------- | :-------------------------------------- |
+| [How to publish images](https://docs.github.com/en/actions/use-cases-and-examples/publishing-packages/publishing-docker-images#publishing-images-to-github-packages)     | This site explains how to set it up correctly |
+| [CI/CD Pipeline Task Toledo](https://ultra.edu.kuleuven.cloud/ultra/courses/_82194_1/outline/edit/document/_4770046_1?courseId=_82194_1&view=content&state=view)                                               | The task for CI/CD Pipeline from Toledo|
+---
+
+## General Links
+
+| **Link**                                                         | **Description**                         |
+| :--------------------------------------------------------------- | :-------------------------------------- |
+| [Markdown Guide](https://www.markdownguide.org/)                | I used this guide in the begin of this semester to learn markdown     |
+| [ChatGpt](https://chatgpt.com)      | ChatGPT for helping with problems and spelling correction |
+| [Ai Image Generator](https://deepai.org/machine-learning-model/text2img)      | Ai Image generation for in the .md files|
+| [Emoticons](https://gist.github.com/rxaviers/7360908)                                | A Github repo with all the emoticons for the markdown files|
+| [Toledo ItLandscape](https://ultra.edu.kuleuven.cloud/ultra/courses/_82194_1/outline)            | The Toledo ItLandscape page with information|
+
+---
+
+## Personal Recommendations
+
+if you just stumbled onto this project, I reccommend starting with the following resources to get a solid foundation in Docker, WordPress, MongoDB, and CI/CD:
+
+1. **Docker**: Begin with the official tutorial and Play with Docker
+2. **WordPress**: Start with a local installation via Docker  
+3. **MongoDB**: Follow the MongoDB University courses
+4. **CI/CD**: Start small with simple GitHub Actions workflows
+
+---
